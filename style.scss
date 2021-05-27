@@ -1,16 +1,161 @@
 $fontOverpass: 'overpass';
 $fontUbuntu: 'Ubuntu';
 
+$ctaText: hsl(356, 100%, 66%);
+$ctaBgHover: hsl(355, 100%, 74%);
+$headingText: hsl(208, 49%, 24%);
+$white: hsl(0, 0%, 100%);
+$footerText: hsl(240, 2%, 79%);
+// $darkGrayishBlue : hsl(207, 13%, 34%);
+$footerBg: hsl(240, 10%, 16%);
+
+$veryLightRed: hsl(13, 100%, 72%);
+$lightRed: hsl(353, 100%, 62%);
+
+$headerHeight: 80vh;
+
+@mixin navText($color) {
+    color: $color;
+    font-weight: 600;
+    opacity: .7;
+}
+
+@mixin roundedBtn($color, $bgColor) {
+    color: $color;
+    background-color: $bgColor;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+@mixin titleText($color, $font, $fontSize, $weight) {
+    color: $color;
+    font-family: $font;
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin subText($color, $font, $fontSize, $opacity) {
+    color: $color;
+    font-family: $font;
+    font-size: $fontSize;
+    opacity: $opacity;
+}
+
 
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    font-family: $fontOverpass, Arial, Helvetica, sans-serif;
+    background-color: $white;
 }
 
 #header {
+    width: 100%;
+    height: $headerHeight;
+    border-radius: 0 0 0 100px;
+    background-image: 
+    url('./images/bg-pattern-intro.svg'),
+    linear-gradient(to right, $veryLightRed, $lightRed); 
+    background-position: 25% 52%;
+    background-repeat: no-repeat;
 
 }
+
+.nav {
+    width: 100%;
+    height: calc($headerHeight * .2);
+    color: white;
+    // background-color: grey;
+    display: flex;
+    align-items: center;
+    padding: 3.5rem 6rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: $fontUbuntu;
+    font-size: 2.5rem;
+    font-weight: 500;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 3;    
+    font-family: $fontUbuntu;
+    padding: 0 0 0 4rem;
+    
+    .menu-item {
+        padding: 0 2.5rem 0 0;
+        @include navText(white);
+
+        .sub-menu {
+            display: none;
+        }
+    }
+}
+
+.nav-account {
+    flex-grow: 2;
+    font-family: $fontUbuntu;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+    li a {
+        text-decoration: none;
+    }
+    #login {
+        @include navText(white);
+        padding: 0 2rem;
+    }
+    #signup {
+        @include roundedBtn($lightRed, white);
+        padding: .8rem 2.3rem;
+    }
+}
+
+.content {
+    width: 100%;
+    height: calc($headerHeight * .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0 0;
+
+    .main-heading {
+        @include titleText(white, $fontOverpass, 3.5rem, 600);
+    }
+    .sub-heading {
+        @include subText(white, $fontOverpass, 1.2rem, .7);
+        padding: .8rem 0 3rem 0;
+    }
+    .btn1 {
+        @include roundedBtn($lightRed, white);
+        font-size: 1rem;
+        font-family: $fontUbuntu;
+        padding: .7rem 1rem;
+        border: none;
+        margin-right: 1rem;
+    }
+    .btn2 {
+        @include roundedBtn(white, transparent);
+        font-size: 1rem;
+        font-family: $fontUbuntu;
+        padding: .7rem 1rem;
+        border: 1px solid white;
+    }
+    
+}
+
+
 
 .attribution { 
     font-size: 11px; 

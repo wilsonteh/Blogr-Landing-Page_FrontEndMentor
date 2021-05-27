@@ -67,6 +67,10 @@ body {
   opacity: .7;
 }
 
+.menu-wrapper .menu-item .dropdown {
+  padding: 0 0 0 .2rem;
+}
+
 .menu-wrapper .menu-item .sub-menu {
   display: none;
 }

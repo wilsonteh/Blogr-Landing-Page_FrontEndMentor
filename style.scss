@@ -74,41 +74,89 @@ body {
 }
 
 .logo {
+    // background-color: rosybrown;
+    flex-grow: 1;
     font-family: $fontUbuntu;
     font-size: 2.5rem;
     font-weight: 500;
-    flex-grow: 1;
     display: flex;
     justify-content: flex-end;
 }
 
 .menu-wrapper {
+    // background-color: rebeccapurple;
+    flex-grow: 2;
     display: flex;
-    justify-content: flex-start;
-    flex-grow: 3;    
+    justify-content: flex-start;  
     font-family: $fontUbuntu;
-    padding: 0 0 0 4rem;
-    
+    padding: 0 0 0 3rem;
+
     .menu-item {
-        padding: 0 2.5rem 0 0;
-        @include navText(white);
+        padding: 0 1rem 0 1rem;
+        cursor: pointer;
+        position: relative;
+        
+        .main-menu {
+            @include navText(white);
+        }
+
+        .main-menu:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
 
         .dropdown {
             padding: 0 0 0 .2rem;
         }
         .sub-menu {
             display: none;
+            position: absolute;
+            top: 50px;
+            width: 150px;
+            height: auto;   
+            background-color: white;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, .3);
+            border-radius: 5px;
+            padding: 1rem;
+            box-sizing: border-box;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            li {
+                padding: .3rem 0;
+                opacity: .8;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                font-weight: 600;
+            }
         }
+        #menu-1:checked ~ .sub-menu, #menu-2:checked ~ .sub-menu, #menu-3:checked ~ .sub-menu {
+            display: block;
+        }
+    }
+    #menu-1, #menu-2, #menu-3 {
+            display: none;
+            width: 0;
+            height: 0;
     }
 }
 
 .nav-account {
-    flex-grow: 2;
+    // background-color: cyan;
+    flex-grow: 1;
     font-family: $fontUbuntu;
+    box-sizing: border-box;
 
     ul {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         list-style: none;
     }
     li a {
@@ -116,7 +164,7 @@ body {
     }
     #login {
         @include navText(white);
-        padding: 0 2rem;
+        padding: 0 2rem 0 0;
     }
     #signup {
         @include roundedBtn($lightRed, white);
@@ -158,8 +206,6 @@ body {
     
 }
 
-
-
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -168,3 +214,17 @@ body {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+@media screen and (max-width: 992px) {
+    .nav {
+        padding: 3.5rem 2rem;
+        
+        .menu-item {
+            padding: 0 1rem 0 0;
+        }
+        #login {
+            padding: 0 1rem 0 0;
+        }
+    }
+}
+

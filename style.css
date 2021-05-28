@@ -32,12 +32,12 @@ body {
 }
 
 .logo {
-  font-family: "Ubuntu";
-  font-size: 2.5rem;
-  font-weight: 500;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,24 +47,34 @@ body {
 }
 
 .menu-wrapper {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-          flex-grow: 3;
   font-family: "Ubuntu";
-  padding: 0 0 0 4rem;
+  padding: 0 0 0 3rem;
 }
 
 .menu-wrapper .menu-item {
-  padding: 0 2.5rem 0 0;
+  padding: 0 1rem 0 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-wrapper .menu-item .main-menu {
   color: white;
   font-weight: 600;
   opacity: .7;
+}
+
+.menu-wrapper .menu-item .main-menu:hover {
+  text-decoration: underline;
+  opacity: 1;
 }
 
 .menu-wrapper .menu-item .dropdown {
@@ -73,22 +83,65 @@ body {
 
 .menu-wrapper .menu-item .sub-menu {
   display: none;
+  position: absolute;
+  top: 50px;
+  width: 150px;
+  height: auto;
+  background-color: white;
+  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.menu-wrapper .menu-item .sub-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu-wrapper .menu-item .sub-menu li {
+  padding: .3rem 0;
+  opacity: .8;
+}
+
+.menu-wrapper .menu-item .sub-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-wrapper .menu-item .sub-menu a:hover {
+  font-weight: 600;
+}
+
+.menu-wrapper .menu-item #menu-1:checked ~ .sub-menu, .menu-wrapper .menu-item #menu-2:checked ~ .sub-menu, .menu-wrapper .menu-item #menu-3:checked ~ .sub-menu {
+  display: block;
+}
+
+.menu-wrapper #menu-1, .menu-wrapper #menu-2, .menu-wrapper #menu-3 {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .nav-account {
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   font-family: "Ubuntu";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .nav-account ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   list-style: none;
 }
 
@@ -100,7 +153,7 @@ body {
   color: white;
   font-weight: 600;
   opacity: .7;
-  padding: 0 2rem;
+  padding: 0 2rem 0 0;
 }
 
 .nav-account #signup {
@@ -175,5 +228,17 @@ body {
 
 .attribution a {
   color: #3e52a3;
+}
+
+@media screen and (max-width: 992px) {
+  .nav {
+    padding: 3.5rem 2rem;
+  }
+  .nav .menu-item {
+    padding: 0 1rem 0 0;
+  }
+  .nav #login {
+    padding: 0 1rem 0 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  height: 150vh;
   font-size: 16px;
   font-family: "overpass", Arial, Helvetica, sans-serif;
   background-color: white;
@@ -29,6 +30,26 @@ body {
   padding: 3.5rem 6rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger .line1, .hamburger .line2, .hamburger .line3 {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 6px;
+  border-radius: 50px;
+}
+
+.nav-wrapper {
+  display: contents;
 }
 
 .logo {
@@ -77,8 +98,12 @@ body {
   opacity: 1;
 }
 
-.menu-wrapper .menu-item .dropdown {
+.menu-wrapper .menu-item .dropdown-desktop {
   padding: 0 0 0 .2rem;
+}
+
+.menu-wrapper .menu-item .dropdown-mobile {
+  display: none;
 }
 
 .menu-wrapper .menu-item .sub-menu {
@@ -122,8 +147,10 @@ body {
 
 .menu-wrapper #menu-1, .menu-wrapper #menu-2, .menu-wrapper #menu-3 {
   display: none;
-  width: 0;
-  height: 0;
+}
+
+hr {
+  display: none;
 }
 
 .nav-account {
@@ -158,7 +185,7 @@ body {
 
 .nav-account #signup {
   color: #ff3d54;
-  background-color: white;
+  background: white;
   border-radius: 50px;
   font-weight: 600;
   padding: .8rem 2.3rem;
@@ -200,7 +227,7 @@ body {
 
 .content .btn1 {
   color: #ff3d54;
-  background-color: white;
+  background: white;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
@@ -212,7 +239,7 @@ body {
 
 .content .btn2 {
   color: white;
-  background-color: transparent;
+  background: transparent;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
@@ -239,6 +266,173 @@ body {
   }
   .nav #login {
     padding: 0 1rem 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    background-size: contain;
+  }
+  .logo {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .nav-wrapper {
+    position: absolute;
+    top: 100%;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  .menu-wrapper {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 1.1rem;
+  }
+  .menu-wrapper .menu-item {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .menu-wrapper .menu-item .main-menu {
+    color: #1f3f5b;
+    font-weight: 600;
+    opacity: 1;
+    font-family: "overpass";
+  }
+  .menu-wrapper .menu-item .main-menu .dropdown-desktop {
+    display: none;
+  }
+  .menu-wrapper .menu-item .main-menu .dropdown-mobile {
+    display: inline;
+    padding: 0 0 0 .2rem;
+  }
+  .menu-wrapper .menu-item .sub-menu {
+    display: none;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 1rem 0 0 0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 1rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .menu-wrapper .menu-item .sub-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .menu-wrapper .menu-item .sub-menu li {
+    padding: .7rem 0;
+    opacity: .7;
+  }
+  .menu-wrapper .menu-item .sub-menu a {
+    text-decoration: none;
+    color: #1f3f5b;
+  }
+  .menu-wrapper .menu-item .sub-menu a:hover {
+    font-weight: 600;
+  }
+  hr {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 1px;
+    background: #c8c8cb;
+  }
+  .nav-account ul {
+    min-height: 120px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav-account #login {
+    color: #1f3f5b;
+    opacity: 1;
+    font-family: "overpass";
+  }
+  .nav-account #signup {
+    font-family: "overpass";
+    color: #1f3f5b;
+    padding: 0;
+    color: white;
+    background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
+    background: linear-gradient(to right, #ff8f70, #ff3d54);
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+  }
+  .hamburger {
+    display: block;
+  }
+  #nav-toggle:checked ~ .nav-wrapper {
+    top: 20%;
+    left: 0;
+    right: 0;
+  }
+  #nav-toggle:checked ~ .hamburger .line1 {
+    -webkit-transform: translateY(5px) rotate(225deg);
+            transform: translateY(5px) rotate(225deg);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  #nav-toggle:checked ~ .hamburger .line3 {
+    -webkit-transform: translateY(-5px) rotate(-225deg);
+            transform: translateY(-5px) rotate(-225deg);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  #nav-toggle:checked ~ .hamburger .line2 {
+    display: none;
+  }
+  .content .main-heading, .content .sub-heading {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -19,70 +19,86 @@
 <body>
 
     <header id="header">
+        
         <nav class="nav">
+            <input type="checkbox" name="" id="nav-toggle">
             <div class="logo">Blogr</div>
             
-            <!-- <img src="./images/icon-hamburger.svg" alt=""> -->
+            <label for="nav-toggle" class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </label>
 
-            <div class="menu-wrapper">
-                <div class="menu-item">
-                    <input type="checkbox" name="" class="menu-checkbox" id="menu-1">
-                    <label class="main-menu" for="menu-1">
-                        Product
-                        <img class="dropdown" src="./images/icon-arrow-light.svg" alt="">
-                    </label>
-                    
-                    <div class="sub-menu">
-                        <ul>
-                            <li><a href="#Overview">Overview</a></li>
-                            <li><a href="#Pricing"> Pricing </a></li>
-                            <li><a href="#Marketplace"> Marketplace </a></li>
-                            <li><a href="#Features"> Features </a></li>
-                            <li><a href="#Integrations"> Intergrations </a></li>
-                        </ul>
+            <div class="nav-wrapper">
+                <div class="menu-wrapper">
+                    <div class="menu-item">
+                        <input type="checkbox" name="" class="menu-checkbox" id="menu-1">
+                        <label class="main-menu" for="menu-1">
+                            Product
+                            <img class="dropdown-desktop" src="./images/icon-arrow-light.svg" alt="">
+                            <img class="dropdown-mobile" src="./images/icon-arrow-dark.svg" alt="">
+                        </label>
+                        
+                        <div class="sub-menu">
+                            <ul>
+                                <li><a href="#Overview">Overview</a></li>
+                                <li><a href="#Pricing"> Pricing </a></li>
+                                <li><a href="#Marketplace"> Marketplace </a></li>
+                                <li><a href="#Features"> Features </a></li>
+                                <li><a href="#Integrations"> Intergrations </a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <input type="checkbox" name="" class="menu-checkbox" id="menu-2">
-                    <label class="main-menu" for="menu-2">
-                        Company
-                        <img class="dropdown" src="./images/icon-arrow-light.svg" alt="">
-                    </label>
                     
-                    <div class="sub-menu">
-                        <ul>
-                            <li><a href="#About"> About </a></li>
-                            <li><a href="#Team"> Team </a></li>
-                            <li><a href="#Blog"> Blog </a></li>
-                            <li><a href="#Careerrs"> Careers </a></li>
-                        </ul>
+                    <div class="menu-item">
+                        <input type="checkbox" name="" class="menu-checkbox" id="menu-2">
+                        <label class="main-menu" for="menu-2">
+                            Company
+                            <img class="dropdown-desktop" src="./images/icon-arrow-light.svg" alt="">
+                            <img class="dropdown-mobile" src="./images/icon-arrow-dark.svg" alt="">
+                        </label>
+                        
+                        <div class="sub-menu">
+                            <ul>
+                                <li><a href="#About"> About </a></li>
+                                <li><a href="#Team"> Team </a></li>
+                                <li><a href="#Blog"> Blog </a></li>
+                                <li><a href="#Careerrs"> Careers </a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <input type="checkbox" name="" class="menu-checkbox" id="menu-3">
-                    <label class="main-menu" for="menu-3">
-                        Connect
-                        <img class="dropdown" src="./images/icon-arrow-light.svg" alt="">
-                    </label>
                     
-                    <div class="sub-menu">
-                        <ul>
-                            <li><a href="#Contact"> Contact </a></li>
-                            <li><a href="#Newsletter"> Newsletter </a></li>
-                            <li><a href="#Linkedin"> LinkedIn </a></li>
-                        </ul>
-                    </div>
+                    <div class="menu-item">
+                        <input type="checkbox" name="" class="menu-checkbox" id="menu-3">
+                        <label class="main-menu" for="menu-3">
+                            Connect
+                            <img class="dropdown-desktop" src="./images/icon-arrow-light.svg" alt="">
+                            <img class="dropdown-mobile" src="./images/icon-arrow-dark.svg" alt="">
+                        </label>
+                        
+                        <div class="sub-menu">
+                            <ul>
+                                <li><a href="#Contact"> Contact </a></li>
+                                <li><a href="#Newsletter"> Newsletter </a></li>
+                                <li><a href="#Linkedin"> LinkedIn </a></li>
+                            </ul>
+                        </div>
+                    </div> 
                 </div>
-            </div>
 
-            <div class="nav-account">
-                <ul>
-                    <li><a id="login" href="#Login"> Login </a></li>
-                    <li><a id="signup" href="#Signup"> Sign Up </a></li>
-                </ul>
+                <hr>
+
+                <div class="nav-account">
+                    <ul>
+                        <li><a id="login" href="#Login">Login</a></li>
+                        <li><a id="signup" href="#Signup">Sign Up</a></li>
+                    </ul>
+                </div>
+
+                
             </div>
+            
         </nav>
         
         <div class="content">
@@ -98,7 +114,7 @@
     </header>
 
 
-
+<!-- 
   Designed for the future
 
   Introducing an extensible editor
@@ -143,7 +159,7 @@
   
   Contact
   Newsletter
-  LinkedIn
+  LinkedIn -->
 
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

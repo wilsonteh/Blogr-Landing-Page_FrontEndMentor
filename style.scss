@@ -6,12 +6,13 @@ $ctaBgHover: hsl(355, 100%, 74%);
 $headingText: hsl(208, 49%, 24%);
 $white: hsl(0, 0%, 100%);
 $footerText: hsl(240, 2%, 79%);
-// $darkGrayishBlue : hsl(207, 13%, 34%);
+$darkGrayishBlue : hsl(207, 13%, 34%);
 $footerBg: hsl(240, 10%, 16%);
 
 $veryLightRed: hsl(13, 100%, 72%);
 $lightRed: hsl(353, 100%, 62%);
 
+$headerGradient: linear-gradient(to right, $veryLightRed, $lightRed); 
 $headerHeight: 80vh;
 
 @mixin navText($color) {
@@ -22,7 +23,7 @@ $headerHeight: 80vh;
 
 @mixin roundedBtn($color, $bgColor) {
     color: $color;
-    background-color: $bgColor;
+    background: $bgColor;
     border-radius: 50px;
     font-weight: 600;
 }
@@ -41,10 +42,11 @@ $headerHeight: 80vh;
     opacity: $opacity;
 }
 
-
+ 
 body {
     margin: 0;
     padding: 0;
+    height: 150vh;   // temp
     font-size: 16px;
     font-family: $fontOverpass, Arial, Helvetica, sans-serif;
     background-color: $white;
@@ -55,11 +57,9 @@ body {
     height: $headerHeight;
     border-radius: 0 0 0 100px;
     background-image: 
-    url('./images/bg-pattern-intro.svg'),
-    linear-gradient(to right, $veryLightRed, $lightRed); 
+    url('./images/bg-pattern-intro.svg'), $headerGradient;
     background-position: 25% 52%;
     background-repeat: no-repeat;
-
 }
 
 .nav {
@@ -71,6 +71,26 @@ body {
     align-items: center;
     padding: 3.5rem 6rem;
     box-sizing: border-box;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+
+    .line1, .line2, .line3 {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        margin: 6px;
+        border-radius: 50px;
+    }
+}
+
+.nav-wrapper {
+    display: contents;
 }
 
 .logo {
@@ -105,8 +125,11 @@ body {
             opacity: 1;
         }
 
-        .dropdown {
+        .dropdown-desktop {
             padding: 0 0 0 .2rem;
+        }
+        .dropdown-mobile {
+            display: none;
         }
         .sub-menu {
             display: none;
@@ -143,9 +166,11 @@ body {
     }
     #menu-1, #menu-2, #menu-3 {
             display: none;
-            width: 0;
-            height: 0;
     }
+}
+
+hr {
+    display: none;
 }
 
 .nav-account {
@@ -228,3 +253,150 @@ body {
     }
 }
 
+@media screen and (max-width: 768px) {
+    #header {
+        background-size: contain;
+    }
+    .logo {
+        justify-content: flex-start;
+    }
+    .nav-wrapper {  
+        position: absolute;
+        top: 100%;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-sizing: border-box;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .3);
+        z-index: 2;
+    }
+    
+    .menu-wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 1.1rem;
+
+        .menu-item {
+            width: 100%;
+            padding: 1rem 0;
+            text-align: center;
+
+            .main-menu {
+                color: $headingText;
+                font-weight: 600;
+                opacity: 1;
+                font-family: $fontOverpass;
+
+                .dropdown-desktop {
+                    display: none;
+                }
+                .dropdown-mobile {
+                    display: inline;
+                    padding: 0 0 0 .2rem;
+                }
+            }
+
+            .sub-menu {
+                display: none;
+                position: static;
+                width: 100%;
+                height: auto;   
+                margin: 1rem 0 0 0;
+                background-color: rgba(240, 240, 240, 1);
+                border-radius: 5px;
+                padding: 1rem;
+                box-sizing: border-box;
+                box-shadow: none;
+    
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                }
+                li {
+                    padding: .7rem 0;
+                    opacity: .7;
+                }
+                a {
+                    text-decoration: none;
+                    color: $headingText;
+                }
+                a:hover {
+                    font-weight: 600;
+                }
+            }   
+            
+        }
+    }
+
+    hr {
+        display: block;
+        border: none;
+        width: 100%;
+        height: 1px;
+        background: $footerText;
+    }
+
+    .nav-account {
+        
+        ul {
+            min-height: 120px;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        #login {
+            color: $headingText;
+            opacity: 1;
+            font-family: $fontOverpass;
+        }
+        
+        #signup {
+            font-family: $fontOverpass;
+            color: $headingText;
+            padding: 0;
+            @include roundedBtn(white, $headerGradient);
+            padding: 1rem 2.5rem;
+        }
+    }
+    .hamburger {
+        display: block;
+    }
+    #nav-toggle:checked ~.nav-wrapper {
+        top: 20%;
+        left: 0;
+        right: 0;
+    }
+    #nav-toggle:checked ~ .hamburger .line1 {
+        transform: translateY(5px) rotate(225deg);
+        transition: .3s;
+    }
+    #nav-toggle:checked ~ .hamburger .line3 {
+        transform: translateY(-5px) rotate(-225deg);
+        transition: .3s;
+    }
+    #nav-toggle:checked ~ .hamburger .line2 {
+        display: none;
+    }
+    .content {
+
+        .main-heading, .sub-heading {
+            text-align: center;
+        }
+    }
+}

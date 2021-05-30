@@ -145,6 +145,11 @@ body {
   display: block;
 }
 
+.menu-wrapper .menu-item #menu-1:checked ~ .main-menu > .dropdown-desktop, .menu-wrapper .menu-item #menu-2:checked ~ .main-menu > .dropdown-desktop, .menu-wrapper .menu-item #menu-3:checked ~ .main-menu > .dropdown-desktop {
+  -webkit-transform: translateX(5px) rotate(180deg);
+          transform: translateX(5px) rotate(180deg);
+}
+
 .menu-wrapper #menu-1, .menu-wrapper #menu-2, .menu-wrapper #menu-3 {
   display: none;
 }
@@ -364,6 +369,10 @@ hr {
   }
   .menu-wrapper .menu-item .sub-menu a:hover {
     font-weight: 600;
+  }
+  .menu-wrapper .menu-item #menu-1:checked ~ .main-menu > .dropdown-mobile, .menu-wrapper .menu-item #menu-2:checked ~ .main-menu > .dropdown-mobile, .menu-wrapper .menu-item #menu-3:checked ~ .main-menu > .dropdown-mobile {
+    -webkit-transform: translateX(5px) rotate(180deg);
+            transform: translateX(5px) rotate(180deg);
   }
   hr {
     display: block;

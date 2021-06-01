@@ -13,6 +13,8 @@ $veryLightRed: hsl(13, 100%, 72%);
 $lightRed: hsl(353, 100%, 62%);
 
 $headerGradient: linear-gradient(to right, $veryLightRed, $lightRed); 
+$section2Gradient: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+
 $headerHeight: 80vh;
 
 @mixin navText($color) {
@@ -42,6 +44,11 @@ $headerHeight: 80vh;
     opacity: $opacity;
 }
 
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
  
 body {
     margin: 0;
@@ -50,6 +57,7 @@ body {
     font-size: 16px;
     font-family: $fontOverpass, Arial, Helvetica, sans-serif;
     background-color: $white;
+    overflow-x: hidden;
 }
 
 #header {
@@ -233,6 +241,128 @@ hr {
         border: 1px solid white;
     }
     
+}
+
+main {
+    @include flexColumn;
+}
+
+.section-1 {
+    @include flexColumn;
+    // background-color: yellowgreen;
+    height: auto;
+    padding: 10rem 0;
+    color: $headingText;
+    // overflow: hidden;a
+    
+    .main-heading { 
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .content {
+        // background-color: hotpink;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        position: relative;
+        padding: 0 0 0 8rem;
+        
+        .text-wrapper {
+            // background-color: grey;
+            @include flexColumn;
+            width: 40%;
+            padding: 2rem 6rem 1rem 2rem;
+
+            .text-1 {
+                margin: 0 0 3rem 0;
+            }
+
+            .description {
+                line-height: 2rem;
+            }
+        }
+        .image-wrapper {
+            width: 60%;
+            display: flex;
+            align-items: flex-start;
+
+            .editor-img {
+                // relative to .content
+                position: absolute;
+                top: -35%;
+                right: -10%;
+            }
+        }
+    }
+}
+
+.section-2 {
+    display: flex;
+    background-image: url('./images/bg-pattern-circles.svg'), $section2Gradient;
+    background-repeat: no-repeat;
+    background-position: -45% 80%;
+    height: auto;
+    border-radius: 0 100px 0 100px;
+    position: relative;
+    
+    .image-wrapper {
+        width: 50%;
+
+        .phones-img {
+            // relative to .section-2
+            position: absolute;
+            top: -20%;
+            left: 8%;
+        }
+    }
+    .text {
+        width: 50%;
+        color: white;
+        padding: 5rem 3rem 5rem 0;
+
+        .heading {
+            font-size: 2rem;
+        }
+        .description {
+            padding-right: 10rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.section-3 {
+    display: flex;
+    height: auto;
+    margin: 10rem 0;
+    padding: 10rem 0;
+    position: relative;
+    // background-color: yellowgreen;
+    
+    .image-wrapper {
+        width: 50%;
+        
+        .laptop-img {
+            // relative to .section-3
+            position: absolute;
+            top: -5%;
+            left: -18%;
+        }
+    }
+    .text-wrapper {
+        // background-color: cyan;
+        width: 50%;
+        color: $headingText;
+        padding: 0 10rem;
+        
+        .text-1 {
+            margin: 0 0 4rem 0;
+        }
+        .description {
+            line-height: 2rem;
+        }
+    }
 }
 
 .attribution { 

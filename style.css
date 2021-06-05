@@ -815,6 +815,8 @@ footer .sub-item li:hover {
   .section-3 .image-wrapper .laptop-img {
     position: static;
     width: 100%;
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
   }
   .section-3 .text-wrapper {
     -webkit-box-ordinal-group: 3;

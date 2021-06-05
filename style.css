@@ -417,6 +417,100 @@ main {
   line-height: 2rem;
 }
 
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #25252d;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: "Ubuntu";
+  padding: 4rem 0;
+  border-radius: 0 100px 0 0;
+}
+
+footer .blogr-col h1 {
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+footer .product-col .main-item {
+  font-weight: 600;
+}
+
+footer .product-col .sub-item {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  color: white;
+}
+
+footer .product-col .sub-item li {
+  margin: .8rem 0;
+}
+
+footer .product-col .sub-item li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  opacity: .7;
+}
+
+footer .company-col .main-item {
+  font-weight: 600;
+}
+
+footer .company-col .sub-item {
+  list-style: none;
+  padding: 0;
+  color: white;
+  margin-top: 2rem;
+}
+
+footer .company-col .sub-item li {
+  margin: .8rem 0;
+}
+
+footer .company-col .sub-item li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  opacity: .7;
+}
+
+footer .connect-col .main-item {
+  font-weight: 600;
+}
+
+footer .connect-col .sub-item {
+  list-style: none;
+  padding: 0;
+  color: white;
+  margin-top: 2rem;
+}
+
+footer .connect-col .sub-item li {
+  margin: .8rem 0;
+}
+
+footer .connect-col .sub-item li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  opacity: .7;
+}
+
+footer .sub-item li:hover {
+  text-decoration: underline;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -731,6 +825,33 @@ main {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .blogr-col h1 {
+    margin-bottom: 4rem;
+  }
+  footer .product-col {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  footer .company-col {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  footer .connect-col {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 }
 

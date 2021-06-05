@@ -376,6 +376,101 @@ main {
     }
 }
 
+footer {
+    width: 100%;
+    height: auto;
+    background-color: $footerBg;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-family: $fontUbuntu;
+    padding: 4rem 0;
+    border-radius: 0 100px 0 0;
+    
+    .blogr-col {
+
+        h1 {
+            font-size: 2.3rem;
+            margin: 0;
+        }
+    }
+    .product-col {
+
+        .main-item {
+            font-weight: 600;
+        }
+        .sub-item {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+            color: white;
+            
+            li {
+                margin: .8rem 0;
+            }
+            
+            li a {
+                text-decoration: none;
+                color: white;
+                font-weight: 300;
+                opacity: .7;
+            }
+        }
+    }
+    .company-col {
+        
+        .main-item {
+            font-weight: 600;
+            
+        }
+        .sub-item {
+            list-style: none;
+            padding: 0;
+            color: white;
+            margin-top: 2rem;
+            
+            li {
+                margin: .8rem 0;
+            }
+            
+            li a {
+                text-decoration: none;
+                color: white;
+                font-weight: 300;
+                opacity: .7;
+            }
+        }
+    }
+    .connect-col {
+        
+        .main-item {
+            font-weight: 600;
+        }
+        .sub-item {
+            list-style: none;
+            padding: 0;
+            color: white;
+            margin-top: 2rem;
+            
+            li {
+                margin: .8rem 0;
+            }
+            
+            li a {
+                text-decoration: none;
+                color: white;
+                font-weight: 300;
+                opacity: .7;
+            }
+        }
+    }
+
+    .sub-item li:hover {
+        text-decoration: underline;
+    }
+}
+
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -694,6 +789,32 @@ main {
         }
     }
 
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+
+        .blogr-col {
+            
+            h1 {
+                margin-bottom: 4rem;
+            }
+        }
+        .product-col {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .company-col {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .connect-col {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
 }
 
 @media screen and (max-width: 440px) {
